@@ -15,10 +15,12 @@ app.post('/quote', function (req, res) {
 
   console.log(req.body)
 
-  // TODO: Add some logic to vary the price of the quote sent
+  var randomQuoteNumber = "Q" +  Math.floor(Math.random() * (999999 - 1)) + 1;
+  var randomQuotePrice = Math.round((Math.random() * (450 - 50)) * 100) / 100;
 
   var response = {
-    price: 42.99
+    refNo: randomQuoteNumber,
+    price: randomQuotePrice
   }
 
   res.send(response)
